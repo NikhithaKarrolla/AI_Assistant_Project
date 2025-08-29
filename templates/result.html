@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+  <section class="card">
+    <h2>Result</h2>
+    <div class="meta">
+      <p><strong>Function:</strong> {{ function }}</p>
+      <p><strong>Prompt Variant:</strong> {{ variant }}</p>
+    </div>
+    <div class="io">
+      <h3>Your Input</h3>
+      <pre>{{ user_input }}</pre>
+      <h3>Assistant Response</h3>
+      <pre>{{ output }}</pre>
+    </div>
+  </section>
+
+  <section class="card">
+    <h3>Was this response helpful?</h3>
+    <form method="POST" action="{{ url_for('feedback') }}">
+      <input type="hidden" name="function" value="{{ function }}">
+      <input type="hidden" name="variant" value="{{ variant }}">
+      <input type="hidden" name="user_input" value="{{ user_input }}">
+      <input type="hidden" name="output" value="{{ output }}">
+      <div class="radio-group">
+        <label><input type="radio" name="helpful" value="yes" required> Yes</label>
+        <label><input type="radio" name="helpful" value="no" required> No</label>
+      </div>
+      <label for="comments">Optional comments:</label>
+      <textarea id="comments" name="comments" placeholder="What worked? What could improve?"></textarea>
+      <button type="submit">Submit Feedback</button>
+    </form>
+  </section>
+
+  <p><a href="{{ url_for('index') }}">&#8592; Back</a></p>
+{% endblock %}

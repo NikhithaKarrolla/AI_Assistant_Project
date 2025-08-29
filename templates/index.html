@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+  <form method="POST" class="card">
+    <label for="function">Choose a function:</label>
+    <select name="function" id="function" required>
+      <option value="">-- select --</option>
+      <option value="answer">Answer Questions</option>
+      <option value="summarize">Summarize Text</option>
+      <option value="create">Generate Creative Content</option>
+      <option value="advice">Provide Advice</option>
+    </select>
+
+    <label for="user_input">Your input:</label>
+    <textarea id="user_input" name="user_input" placeholder="Type your question, text to summarize, creative idea, or advice topic..." required></textarea>
+
+    {% if error %}<p class="error">{{ error }}</p>{% endif %}
+
+    <button type="submit">Run</button>
+  </form>
+{% endblock %}

@@ -1,0 +1,11 @@
+[
+  {
+    "function": "answer",
+    "variant": "llama-3.1-8b-instant",
+    "helpful": "yes",
+    "comments": "",
+    "user_input": "what is the friut?",
+    "output": "I'm assuming you meant to ask \"What is a fruit?\"\r\n\r\nA fruit is the edible, ripened ovary of a plant, typically containing seeds, such as apples, bananas, and strawberries. It's a sweet and nutritious part of many plants that grow from flowers.",
+    "timestamp": "2025-08-29T13:42:56.492992"
+  }
+]
